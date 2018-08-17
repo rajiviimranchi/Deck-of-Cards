@@ -1,0 +1,49 @@
+
+.cardContainerStyle button:disabled {
+  opacity: 0.3;
+}
+
+.cardContainerStyle a {
+  color: #ee9;
+}
+.center-align{
+	text-align:center;
+}
+.StyleCard {
+  width: 60px;
+  height: 80px;
+  border-radius: 3px;
+  border: 1px solid #666;
+  background-color: #f0f0f0;
+  padding: 4px;
+  font-size: 20px;
+  position: relative;
+}
+
+.listOfCards {
+  list-style-type: none;
+}
+  
+.listOfCards li {
+  display: inline-block;
+  margin: 0 5px 5px 0;
+}
+
+.StyleCard.red {
+  color: red;
+}
+
+.StyleCard.black {
+  color: black;
+}
+
+.StyleCard .typeOfCards {
+  font-size: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.panel-default-align{
+	margin-top:50px;
+}

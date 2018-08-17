@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Deck of Cards</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cardStyle.css" />
+	<script src="js/angular.min.js"></script>
+  </head>  
+  <body ng-app="createCardApp">
+	<div class="container-fluid panel-default-align center-align" ng-controller="createCardController as vm">
+		<h1>Deck of Cards</h1>
+		<hr/>
+		<h3>Total no. of Cards in Deck : {{vm.setOfCards.cards.length}}</h3>
+        <img id="deckImage" ng-hide="!vm.setOfCards.cards.length" src="images/deckOfCards.jpg" width="350" />		
+		<div>
+			<button type="button" class="btn btn-danger" ng-click="vm.showAllCards()" ng-hide="!vm.setOfCards.cards.length">Show Cards</button>	
+			<button type="button" class="btn btn-info" ng-click="vm.deckOfCardShuffle()">Shuffle</button>
+			<button type="button" class="btn btn-default" ng-click="vm.removeCard()" ng-hide="!vm.setOfCards.cards.length">Remove Cards</button>
+			<button type="button" class="btn btn-default" ng-click="vm.showAllCards()" ng-hide="!vm.setOfCards.cards.length">Sort Cards</button>		
+			<button type="button" class="btn btn-warning" ng-click="vm.clear()">Clear all</button>
+		</div>
+		<div class="panel panel-default panel-default-align">
+			 <div class="panel-body">
+				<ul class="listOfCards">
+					<li ng-repeat="storeCard in vm.cardContainer">
+						<div class="StyleCard {{storeCard.typeOfCards.colorOfCard}}" title="{{storeCard.displayName}}">
+							<div class="words">{{storeCard.word}}</div>
+							<div class="typeOfCards" ng-bind-html="storeCard.typeOfCards.cardIcon"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+   </div>
+  </body>
+	<script src="js/deckLogicModule.js"></script>
+    <script src="js/contraller.js"></script>
+	
+</html>
